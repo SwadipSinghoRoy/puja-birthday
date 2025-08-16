@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday ❤️</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Dancing+Script:wght@700&display=swap');
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background: url("./asset/p2.jpg") no-repeat center center/cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+      font-family: 'Poppins', sans-serif;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Dark overlay for readability */
+    .overlay {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.5);
+      z-index: 1;
+    }
+
+    /* Center content */
+    .content {
+      position: relative;
+      z-index: 2;
+    }
+
+    h1 {
+/*      font-size: 4rem;
+      font-weight: bold;
+      background: linear-gradient(90deg, #ff0080, #ff8c00, #40e0d0);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
+      animation: shine 3s linear infinite;*/
+      font-family: 'Dancing Script', cursive;
+      font-size: 4rem;
+      font-weight: bold;
+      background: linear-gradient(90deg, #ff0080, #ff8c00, #40e0d0);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 20px rgba(255,255,255,0.6);
+      animation: shine 3s linear infinite;
+    }
+
+    h2 {
+      font-family: 'Dancing Script', cursive;
+      font-size: 2rem;
+      margin-top: 10px;
+      color: gold;
+      text-shadow: 0 0 15px #ffd700, 0 0 30px #ffa500;
+      animation: glowDate 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes shine {
+      from { background-position: 0% 50%; }
+      to { background-position: 100% 50%; }
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 15px #ff69b4, 0 0 30px #ff1493; }
+      to   { text-shadow: 0 0 25px #ff69b4, 0 0 50px #ff1493; }
+    }
+
+    @keyframes glowDate {
+      from { text-shadow: 0 0 15px #ffd700; }
+      to { text-shadow: 0 0 30px #ffa500, 0 0 50px #ffcc00; }
+    }
+
+    /*.name {
+      font-size: 2.5rem;
+      margin-top: 15px;
+      color: #ff69b4;
+      font-weight: bold;
+      text-shadow: 0 0 10px #ff1493, 0 0 20px #ff69b4, 0 0 40px #ff1493;
+      animation: heartbeat 1.5s infinite;
+    }*/
+    .name {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3rem;
+      background: linear-gradient(90deg, rgba(255,105,180,0.9), rgba(255,255,255,0.8));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 25px rgba(255,105,180,0.6);
+      font-weight: bold;
+      animation: heartbeat 2s infinite;
+      letter-spacing: 5px;
+    }
+
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+    }
+
+    /* Sparkles */
+    .sparkles {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      pointer-events: none;
+      z-index: 3;
+    }
+    .sparkles::before, .sparkles::after {
+      content: '';
+      position: absolute;
+      top: -100%; left: -100%;
+      width: 300%; height: 300%;
+      background-image: radial-gradient(2px 2px at 20px 20px, white, transparent),
+                        radial-gradient(2px 2px at 40px 60px, yellow, transparent),
+                        radial-gradient(2px 2px at 60px 100px, pink, transparent),
+                        radial-gradient(2px 2px at 60px 100px, skyblue, transparent);
+      background-size: 200px 200px;
+      animation: sparkleMove 15s linear infinite;
+    }
+    @keyframes sparkleMove {
+      from { transform: translate(0,0); }
+      to { transform: translate(-200px,-200px); }
+    }
+
+    /* Balloons */
+    .balloon {
+      width: 60px;
+      height: 80px;
+      background: red;
+      border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+      position: absolute;
+      bottom: -150px;
+      animation: floatUp 12s infinite ease-in;
+      opacity: 0.8;
+      z-index: 2;
+    }
+    .balloon::after {
+      content: "";
+      position: absolute;
+      width: 2px;
+      height: 40px;
+      background: #fff;
+      top: 80px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(0) rotate(0); opacity: 1; }
+      100% { transform: translateY(-120vh) rotate(20deg); opacity: 0; }
+    }
+
+    /* Different balloon colors + positions + speeds */
+    .b1 { left: 10%; background: #ff6b6b; animation-duration: 10s; }
+    .b2 { left: 30%; background: #6bff95; animation-duration: 14s; }
+    .b3 { left: 50%; background: #6bc9ff; animation-duration: 12s; }
+    .b4 { left: 70%; background: #f5ff6b; animation-duration: 15s; }
+    .b5 { left: 90%; background: #d96bff; animation-duration: 11s; }
+    .b6  { left: 15%; background: #ff9ff3; animation-duration: 13s; }
+    .b7  { left: 25%; background: #feca57; animation-duration: 16s; }
+    .b8  { left: 45%; background: #1dd1a1; animation-duration: 11s; }
+    .b9  { left: 65%; background: #5f27cd; animation-duration: 14s; }
+    .b10 { left: 85%; background: #ee5253; animation-duration: 12s; }
+
+
+  </style>
+</head>
+<body>
+
+  <!-- Dark overlay -->
+  <div class="overlay"></div>
+
+  <!-- Main Content -->
+  <div class="content">
+    <h1>🎉 Happy Birthday 🎉</h1>
+    <h2>17-07-2025</h2>
+    <div class="name">❤️ Puja ❤️</div>
+  </div>
+
+  <!-- Sparkles -->
+  <div class="sparkles"></div>
+
+  <!-- Balloons -->
+  <div class="balloon b1"></div>
+  <div class="balloon b2"></div>
+  <div class="balloon b3"></div>
+  <div class="balloon b4"></div>
+  <div class="balloon b5"></div>
+  <div class="balloon b6"></div>
+  <div class="balloon b7"></div>
+  <div class="balloon b8"></div>
+  <div class="balloon b9"></div>
+  <div class="balloon b10"></div>
+
+  <audio autoplay loop>
+    <source src="asset/birthday.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio>
+
+  <!-- Confetti animation -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <script>
+    function shootConfetti() {
+      confetti({
+        particleCount: 200,
+        spread: 100,
+        origin: { y: 0.6 }
+      });
+    }
+    setInterval(shootConfetti, 2000);
+  </script>
+
+</body>
+</html>
